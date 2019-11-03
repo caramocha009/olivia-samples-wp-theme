@@ -7,7 +7,7 @@
 
             <?php
             if (have_posts()) : while (have_posts()) : the_post();
-                get_template_part('content', get_post_format());
+                get_template_part('partials/content', get_post_format());
             endwhile; endif;
             ?>
 
@@ -20,14 +20,8 @@
             $arr_posts = new WP_Query($args);
 
             if ($arr_posts->have_posts()) :
-                while ($arr_posts->have_posts()) :
-                    $arr_posts->the_post();
-                    ?>
-                    <p><?php the_title(); ?></p>
-                    <div>
-                        <?php the_content(); ?>
-                    </div>
-                <?php
+                while ($arr_posts->have_posts()) : $arr_posts->the_post();
+                    get_template_part('partials/whats-a-doula-bubble');
                 endwhile;
             endif;
             ?>

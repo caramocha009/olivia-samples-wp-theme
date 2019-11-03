@@ -1,18 +1,6 @@
 <?php get_header(); ?>
 
 <?php wp_nav_menu( 'menu=doula-services' ); ?>
-<h1>Prenatal Care!!!!!</h1>
-
-    <p>
-
-        <?php get_page_template_slug() ?>
-    </p>
-
-<?php
-if ( have_posts() ) : while ( have_posts() ) : the_post();
-    get_template_part( 'content', get_post_format() );
-endwhile; endif;
-?>
 
 <?php
 $args = array(

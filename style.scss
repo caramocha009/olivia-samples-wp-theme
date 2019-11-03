@@ -176,6 +176,21 @@ body {
             justify-content: space-evenly;
             align-items: center;
             list-style-type: none;
+
+            li {
+              background-image: url("static/tan-icon.png");
+              background-size: contain;
+              background-repeat: no-repeat;
+              background-position: center;
+              height: 150px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+
+              &.current_page_item {
+                background-image: url("static/pink-icon.png");
+            }
+            }
           }
         }
 
