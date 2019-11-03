@@ -1,19 +1,25 @@
 function toggleTopNav() {
-    jQuery("#top-nav").toggleClass("expanded");
+    jQuery("#top-nav").toggleClass("collapsed");
 }
 
 function hideTopNav() {
-    jQuery("#top-nav").removeClass("expanded");
+    jQuery("#top-nav").addClass("collapsed");
 }
 
 jQuery(document).ready(function () {
-    jQuery("#top-nav").click(function () {
-        toggleTopNav();
-    });
+    (function ($) {
+        const topNav = $("#top-nav");
+        const pageContent = $(".content");
 
-    jQuery(".content").click(function () {
-        hideTopNav();
-    });
+        topNav.click(function () {
+            toggleTopNav();
+        });
+
+        pageContent.click(function () {
+            hideTopNav();
+        });
 
 
+
+    })(jQuery);
 });

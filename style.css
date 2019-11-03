@@ -4,60 +4,80 @@
 
 .page {
   background-color: #f2dbd8;
-  font-family: "Playfair Display SC", serif;
+  font-family: "Spectral", sans-serif;
   font-weight: 300;
   font-size: 24px;
   color: #222222;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  height: 100vh; }
   .page > .menu {
+    font-family: "Playfair Display SC", serif;
     background-color: #bd9881;
     position: fixed;
     width: 100%;
     display: flex;
-    flex: 1; }
+    flex: 1;
+    box-shadow: 0 0 0 #f2dbd8; }
     @media screen and (min-width: 769px) {
       .page > .menu {
         height: 5vmax; } }
-    .page > .menu.expanded ul li {
-      display: flex; }
+    .page > .menu.collapsed ul li {
+      display: none; }
+      .page > .menu.collapsed ul li a {
+        overflow: hidden;
+        text-align: center; }
+      .page > .menu.collapsed ul li.current_page_item {
+        display: flex; }
+        .page > .menu.collapsed ul li.current_page_item a {
+          max-height: unset; }
+      @media screen and (min-width: 769px) {
+        .page > .menu.collapsed ul li {
+          display: flex;
+          flex: 1;
+          justify-content: center;
+          align-items: center; }
+          .page > .menu.collapsed ul li a {
+            overflow: unset; } }
+    @media screen and (min-width: 769px) {
+      .page > .menu.collapsed {
+        flex-direction: row; } }
     .page > .menu ul {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
       align-items: center;
       width: 100%;
+      height: auto;
       list-style-type: none; }
       @media screen and (min-width: 769px) {
         .page > .menu ul {
           flex-direction: row; } }
       .page > .menu ul li {
         flex: 1;
-        padding: 0.1em 0;
-        flex-direction: row;
+        display: flex;
         justify-content: center;
-        display: none; }
-        .page > .menu ul li.current_page_item {
-          display: flex; }
-          .page > .menu ul li.current_page_item a::after, .page > .menu ul li.current_page_item a::before {
-            content: "\2022";
-            color: #f2dbd8;
-            padding: 0 0.5em; }
-        @media screen and (min-width: 769px) {
-          .page > .menu ul li {
-            display: flex; } }
+        align-items: center;
+        padding: 0.1em 0; }
         .page > .menu ul li a {
           display: inline-flex;
-          justify-content: center;
-          align-items: center;
+          height: auto;
           text-transform: uppercase;
           color: #222222;
           text-decoration: none;
           text-align: center; }
+        .page > .menu ul li.current_page_item a::after, .page > .menu ul li.current_page_item a::before {
+          content: "\2022";
+          color: #f2dbd8;
+          padding: 0 0.5em; }
   .page > .content {
-    flex: 1; }
-    @media screen and (min-width: 769px) {
-      .page > .content {
-        margin-top: 5vmax; } }
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 5vmax; }
+    .page > .content .home {
+      height: auto;
+      width: 100vmin; }
 
 /*# sourceMappingURL=style.css.map */
