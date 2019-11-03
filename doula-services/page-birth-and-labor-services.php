@@ -1,5 +1,6 @@
 <?php get_header(); ?>
-<p>doula services</p>
+
+<?php wp_nav_menu( 'menu=doula-services' ); ?>
 
 <?php
 if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -7,14 +8,11 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 endwhile; endif;
 ?>
 
-<?php wp_nav_menu( 'menu=doula-services' ); ?>
-
-
 <?php
 $args = array(
     'post_type' => 'post',
     'post_status' => 'publish',
-    'category_name' => 'whats-a-doula'
+    'category_name' => 'birth-and-labor-services'
 );
 $arr_posts = new WP_Query($args);
 
@@ -30,5 +28,4 @@ if ($arr_posts->have_posts()) :
     endwhile;
 endif;
 ?>
-
 <?php get_footer(); ?>
