@@ -71,7 +71,7 @@ body {
           color: #222222;
           text-decoration: none;
           text-align: center; }
-        .page > .menu ul li.current_page_item a::after, .page > .menu ul li.current_page_item a::before {
+        .page > .menu ul li.current_page_item a::after, .page > .menu ul li.current_page_item a::before, .page > .menu ul licurrent_page_parent a::after, .page > .menu ul licurrent_page_parent a::before, .page > .menu ul li.current_page_ancestor a::after, .page > .menu ul li.current_page_ancestor a::before {
           content: "\2022";
           color: #f2dbd8;
           padding: 0 0.5em; }
@@ -103,5 +103,21 @@ body {
       @media screen and (min-width: 769px) {
         .page > .content .about > div {
           flex: 1; } }
+    .page > .content .doula-services {
+      display: flex; }
+      @media screen and (min-width: 769px) {
+        .page > .content .doula-services {
+          flex-direction: row; }
+          .page > .content .doula-services .menu-doula-services-container {
+            flex: 1; }
+            .page > .content .doula-services .menu-doula-services-container ul {
+              display: flex;
+              flex-direction: column;
+              height: 95vh;
+              justify-content: space-evenly;
+              align-items: center;
+              list-style-type: none; }
+          .page > .content .doula-services .services-content {
+            flex: 3; } }
 
 /*# sourceMappingURL=style.css.map */

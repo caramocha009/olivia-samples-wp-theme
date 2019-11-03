@@ -18,8 +18,7 @@ jQuery(document).ready(function () {
         pageContent.click(function () {
             hideTopNav();
         });
-
-
+        
 
     })(jQuery);
 });

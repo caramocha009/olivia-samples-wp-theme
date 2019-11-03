@@ -1,7 +1,12 @@
 
 <?php get_header(); ?>
 
-<?php wp_nav_menu( 'menu=doula-services' ); ?>
+<div class="doula-services">
+
+
+    <?php wp_nav_menu('menu=doula-services'); ?>
+
+    <div class="services-content">
 
 <?php
 if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -30,6 +35,10 @@ if ($arr_posts->have_posts()) :
 endif;
 ?>
 
+
 <a href="<?php echo get_page_link( get_page_by_title( "Birth and Labor Services" )->ID ); ?>">Birth and Labor Services</a>
 <a href="<?php echo get_page_link( get_page_by_title( "Prenatal Care" )->ID ); ?>">Prenatal Care</a>
+
+    </div>
+</div>
 <?php get_footer(); ?>
