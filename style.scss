@@ -15,6 +15,10 @@ $LARGE: 1025px;
   padding: 0;
 }
 
+body {
+  display: flex;
+}
+
 .page {
   background-color: $LIGHT_PINK;
   font-family: "Spectral", sans-serif;
@@ -23,7 +27,9 @@ $LARGE: 1025px;
   color: $DARK_GRAY;
   display: flex;
   flex-direction: column;
+  flex: 1;
   height: 100vh;
+  overflow: scroll;
 
   >.menu {
     font-family: "Playfair Display SC", serif;
@@ -119,11 +125,39 @@ $LARGE: 1025px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 5vmax;
+    margin-top: 4vmax;
+    padding-top: 0.5vmax;
 
     .home {
       height: auto;
       width: 100vmin;
+    }
+
+    .about {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-image: url("static/about-background.png");
+      background-attachment: scroll;
+      background-position: 2% center;
+      background-repeat: no-repeat;
+
+      @media screen and (min-width: $MEDIUM) {
+        flex-direction: row;
+        height: 100%;
+      }
+
+      > span {
+        @media screen and (min-width: $MEDIUM) {
+          flex: 1;
+        }
+      }
+
+      > div {
+        @media screen and (min-width: $MEDIUM) {
+          flex: 1;
+        }
+      }
     }
   }
 }

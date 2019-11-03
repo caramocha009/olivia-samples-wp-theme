@@ -2,6 +2,9 @@
   margin: 0;
   padding: 0; }
 
+body {
+  display: flex; }
+
 .page {
   background-color: #f2dbd8;
   font-family: "Spectral", sans-serif;
@@ -10,7 +13,9 @@
   color: #222222;
   display: flex;
   flex-direction: column;
-  height: 100vh; }
+  flex: 1;
+  height: 100vh;
+  overflow: scroll; }
   .page > .menu {
     font-family: "Playfair Display SC", serif;
     background-color: #bd9881;
@@ -75,9 +80,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 5vmax; }
+    margin-top: 4vmax;
+    padding-top: 0.5vmax; }
     .page > .content .home {
       height: auto;
       width: 100vmin; }
+    .page > .content .about {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-image: url("static/about-background.png");
+      background-attachment: scroll;
+      background-position: 2% center;
+      background-repeat: no-repeat; }
+      @media screen and (min-width: 769px) {
+        .page > .content .about {
+          flex-direction: row;
+          height: 100%; } }
+      @media screen and (min-width: 769px) {
+        .page > .content .about > span {
+          flex: 1; } }
+      @media screen and (min-width: 769px) {
+        .page > .content .about > div {
+          flex: 1; } }
 
 /*# sourceMappingURL=style.css.map */
