@@ -85,6 +85,9 @@ body {
     .page > .content .home {
       height: auto;
       width: 100vmin; }
+      @media screen and (min-width: 769px) {
+        .page > .content .home {
+          width: 90vmin; } }
     .page > .content .about {
       flex: 1;
       display: flex;
@@ -92,7 +95,16 @@ body {
       background-image: url("static/about-background.png");
       background-attachment: scroll;
       background-position: 2% center;
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat;
+      height: 100%; }
+      .page > .content .about .page-title {
+        text-align: center; }
+      .page > .content .about .page-content {
+        width: 90%;
+        margin: 0 auto;
+        padding: 1em; }
+        .page > .content .about .page-content ul {
+          padding-left: 1em; }
       @media screen and (min-width: 769px) {
         .page > .content .about {
           flex-direction: row;

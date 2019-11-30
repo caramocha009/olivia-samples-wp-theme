@@ -131,6 +131,10 @@ body {
     .home {
       height: auto;
       width: 100vmin;
+
+      @media screen and (min-width: $MEDIUM) {
+        width: 90vmin;
+      }
     }
 
     .about {
@@ -141,6 +145,21 @@ body {
       background-attachment: scroll;
       background-position: 2% center;
       background-repeat: no-repeat;
+      height: 100%;
+      
+      .page-title {
+        text-align: center;
+      }
+
+      .page-content {
+        width: 90%;
+        margin: 0 auto;
+        padding: 1em;
+
+        ul {
+          padding-left: 1em;
+        }
+      }
 
       @media screen and (min-width: $MEDIUM) {
         flex-direction: row;
