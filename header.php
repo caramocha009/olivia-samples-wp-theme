@@ -12,7 +12,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display+SC|Amiri|Spectral&display=swap"
-          rel="stylesheet" />
+          rel="stylesheet"/>
     <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -25,6 +25,6 @@
 <body>
 <div class="page">
 
-        <?php wp_page_menu('menu_id=top-nav&menu_class=collapsed menu&container=nav&show_home=1&depth=1'); ?>
+    <?php wp_page_menu('&menu_class=collapsed menu&container=nav&show_home=1&depth=1'); ?>
 
     <div class="content">

@@ -125,8 +125,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 4vmax;
-    padding-top: 0.5vmax;
+    margin-top: 5vmax;
 
     .home {
       height: auto;
@@ -146,7 +145,7 @@ body {
       background-position: 2% center;
       background-repeat: no-repeat;
       height: 100%;
-      
+
       .page-title {
         text-align: center;
       }
@@ -182,6 +181,18 @@ body {
     .doula-services {
       display: flex;
 
+      .page-title {
+        text-align: center;
+      }
+
+      .page-content {
+        padding: 1em;
+
+        ul {
+          padding-left: 1em;
+        }
+      }
+
       @media screen and (min-width: $MEDIUM) {
         flex-direction: row;
 
@@ -208,13 +219,31 @@ body {
 
               &.current_page_item {
                 background-image: url("static/pink-icon.png");
-            }
+              }
+
+              a {
+                color: $DARK_GRAY;
+                text-decoration: none;
+              }
             }
           }
         }
 
         .services-content {
           flex: 3;
+          padding-right: 1em;
+
+          &.pricing {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+              text-align: center;
+              margin-top: 1em;
+            }
+          }
         }
       }
     }

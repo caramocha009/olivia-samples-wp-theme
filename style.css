@@ -80,8 +80,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 4vmax;
-    padding-top: 0.5vmax; }
+    margin-top: 5vmax; }
     .page > .content .home {
       height: auto;
       width: 100vmin; }
@@ -117,6 +116,12 @@ body {
           flex: 1; } }
     .page > .content .doula-services {
       display: flex; }
+      .page > .content .doula-services .page-title {
+        text-align: center; }
+      .page > .content .doula-services .page-content {
+        padding: 1em; }
+        .page > .content .doula-services .page-content ul {
+          padding-left: 1em; }
       @media screen and (min-width: 769px) {
         .page > .content .doula-services {
           flex-direction: row; }
@@ -140,7 +145,19 @@ body {
                 align-items: center; }
                 .page > .content .doula-services .menu-doula-services-container ul li.current_page_item {
                   background-image: url("static/pink-icon.png"); }
+                .page > .content .doula-services .menu-doula-services-container ul li a {
+                  color: #222222;
+                  text-decoration: none; }
           .page > .content .doula-services .services-content {
-            flex: 3; } }
+            flex: 3;
+            padding-right: 1em; }
+            .page > .content .doula-services .services-content.pricing {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center; }
+              .page > .content .doula-services .services-content.pricing h2 {
+                text-align: center;
+                margin-top: 1em; } }
 
 /*# sourceMappingURL=style.css.map */
