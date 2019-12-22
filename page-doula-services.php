@@ -1,7 +1,7 @@
 <?php get_header(); ?>
     <div class="doula-services">
 
-        <?php wp_nav_menu('menu=doula-services'); ?>
+        <?php wp_nav_menu('&container_class=collapsed menu-doula-services-container &menu=doula-services'); ?>
 
         <div class="services-content">
 

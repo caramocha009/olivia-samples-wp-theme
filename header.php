@@ -17,7 +17,6 @@
             src="https://code.jquery.com/jquery-3.4.1.min.js"
             integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
             crossorigin="anonymous"></script>
-
     <![endif]-->
     <?php wp_head(); ?>
 </head>
@@ -25,6 +24,6 @@
 <body>
 <div class="page">
 
-    <?php wp_page_menu('&menu_class=collapsed menu&container=nav&show_home=1&depth=1'); ?>
+    <?php wp_page_menu('&menu_class=collapsed top-nav menu&container=nav&show_home=1&depth=1'); ?>
 
     <div class="content">
