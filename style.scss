@@ -31,7 +31,7 @@ body {
   height: 100vh;
   overflow: scroll;
 
-  > .menu {
+  .top-nav {
     font-family: "Playfair Display SC", serif;
     background-color: $DARK_TAN;
     position: fixed;
@@ -54,7 +54,7 @@ body {
             text-align: center;
           }
 
-          &.current_page_item {
+          &.current_page_item, &.current_page_parent {
             display: flex;
 
             a {
@@ -80,7 +80,7 @@ body {
       }
     }
 
-    ul {
+    > ul {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -201,6 +201,10 @@ body {
           list-style-type: none;
 
           li {
+            width: 100%;
+            display: block;
+            text-align: center;
+
             a {
               color: $DARK_GRAY;
               text-decoration: none;
@@ -208,21 +212,23 @@ body {
           }
         }
 
-        &.collapsed {
-          ul {
-            li {
-              display: none;
-
-              a {
+        @media screen and (max-width: $MEDIUM) {
+          &.collapsed {
+            ul {
+              li {
                 display: none;
 
-              }
-
-              &.current-menu-item {
-                display: unset;
-
                 a {
+                  display: none;
+
+                }
+
+                &.current-menu-item {
                   display: unset;
+
+                  a {
+                    display: unset;
+                  }
                 }
               }
             }
@@ -251,12 +257,16 @@ body {
               background-repeat: no-repeat;
               background-position: center;
               height: 150px;
-              display: flex;
+              display: unset;
               justify-content: center;
               align-items: center;
 
               &.current_page_item {
                 background-image: url("static/pink-icon.png");
+              }
+
+              a {
+                display: unset;
               }
             }
           }

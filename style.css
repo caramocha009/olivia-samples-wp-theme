@@ -20,7 +20,7 @@ body {
   height: 100vh;
   overflow: scroll;
 }
-.page > .menu {
+.page .top-nav {
   font-family: "Playfair Display SC", serif;
   background-color: #bd9881;
   position: fixed;
@@ -30,40 +30,40 @@ body {
   box-shadow: 0 0 0 #f2dbd8;
 }
 @media screen and (min-width: 769px) {
-  .page > .menu {
+  .page .top-nav {
     height: 5vmax;
   }
 }
-.page > .menu.collapsed ul li {
+.page .top-nav.collapsed ul li {
   display: none;
 }
-.page > .menu.collapsed ul li a {
+.page .top-nav.collapsed ul li a {
   overflow: hidden;
   text-align: center;
 }
-.page > .menu.collapsed ul li.current_page_item {
+.page .top-nav.collapsed ul li.current_page_item, .page .top-nav.collapsed ul li.current_page_parent {
   display: flex;
 }
-.page > .menu.collapsed ul li.current_page_item a {
+.page .top-nav.collapsed ul li.current_page_item a, .page .top-nav.collapsed ul li.current_page_parent a {
   max-height: unset;
 }
 @media screen and (min-width: 769px) {
-  .page > .menu.collapsed ul li {
+  .page .top-nav.collapsed ul li {
     display: flex;
     flex: 1;
     justify-content: center;
     align-items: center;
   }
-  .page > .menu.collapsed ul li a {
+  .page .top-nav.collapsed ul li a {
     overflow: unset;
   }
 }
 @media screen and (min-width: 769px) {
-  .page > .menu.collapsed {
+  .page .top-nav.collapsed {
     flex-direction: row;
   }
 }
-.page > .menu ul {
+.page .top-nav > ul {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -73,18 +73,18 @@ body {
   list-style-type: none;
 }
 @media screen and (min-width: 769px) {
-  .page > .menu ul {
+  .page .top-nav > ul {
     flex-direction: row;
   }
 }
-.page > .menu ul li {
+.page .top-nav > ul li {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0.1em 0;
 }
-.page > .menu ul li a {
+.page .top-nav > ul li a {
   display: inline-flex;
   height: auto;
   text-transform: uppercase;
@@ -92,7 +92,7 @@ body {
   text-decoration: none;
   text-align: center;
 }
-.page > .menu ul li.current_page_item a::after, .page > .menu ul li.current_page_item a::before, .page > .menu ul licurrent_page_parent a::after, .page > .menu ul licurrent_page_parent a::before, .page > .menu ul li.current_page_ancestor a::after, .page > .menu ul li.current_page_ancestor a::before {
+.page .top-nav > ul li.current_page_item a::after, .page .top-nav > ul li.current_page_item a::before, .page .top-nav > ul licurrent_page_parent a::after, .page .top-nav > ul licurrent_page_parent a::before, .page .top-nav > ul li.current_page_ancestor a::after, .page .top-nav > ul li.current_page_ancestor a::before {
   content: "•";
   color: #f2dbd8;
   padding: 0 0.5em;
@@ -160,21 +160,28 @@ body {
 .page > .content .doula-services .menu-doula-services-container ul {
   list-style-type: none;
 }
+.page > .content .doula-services .menu-doula-services-container ul li {
+  width: 100%;
+  display: block;
+  text-align: center;
+}
 .page > .content .doula-services .menu-doula-services-container ul li a {
   color: #222222;
   text-decoration: none;
 }
-.page > .content .doula-services .menu-doula-services-container.collapsed ul li {
-  display: none;
-}
-.page > .content .doula-services .menu-doula-services-container.collapsed ul li a {
-  display: none;
-}
-.page > .content .doula-services .menu-doula-services-container.collapsed ul li.current-menu-item {
-  display: unset;
-}
-.page > .content .doula-services .menu-doula-services-container.collapsed ul li.current-menu-item a {
-  display: unset;
+@media screen and (max-width: 769px) {
+  .page > .content .doula-services .menu-doula-services-container.collapsed ul li {
+    display: none;
+  }
+  .page > .content .doula-services .menu-doula-services-container.collapsed ul li a {
+    display: none;
+  }
+  .page > .content .doula-services .menu-doula-services-container.collapsed ul li.current-menu-item {
+    display: unset;
+  }
+  .page > .content .doula-services .menu-doula-services-container.collapsed ul li.current-menu-item a {
+    display: unset;
+  }
 }
 @media screen and (min-width: 769px) {
   .page > .content .doula-services {
@@ -197,12 +204,15 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     height: 150px;
-    display: flex;
+    display: unset;
     justify-content: center;
     align-items: center;
   }
   .page > .content .doula-services .menu-doula-services-container ul li.current_page_item {
     background-image: url("static/pink-icon.png");
+  }
+  .page > .content .doula-services .menu-doula-services-container ul li a {
+    display: unset;
   }
   .page > .content .doula-services .services-content {
     flex: 3;

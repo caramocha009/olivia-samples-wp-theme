@@ -24,6 +24,6 @@
 <body>
 <div class="page">
 
-    <?php wp_page_menu('&menu_class=collapsed top-nav menu&container=nav&show_home=1&depth=1'); ?>
+    <?php wp_page_menu('&menu_class=collapsed top-nav&container=nav&show_home=1&depth=1'); ?>
 
     <div class="content">
