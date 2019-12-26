@@ -15,6 +15,10 @@ body {
 
 a {
   color: #7d6b81;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
 }
 
 .page {
@@ -113,11 +117,6 @@ a {
   align-items: center;
   margin-top: 5vmax;
 }
-@media screen and (min-width: 769px) {
-  .page > .content {
-    height: 95vmin;
-  }
-}
 .page > .content .home {
   height: auto;
   width: 100vmin;
@@ -166,7 +165,7 @@ a {
 .page > .content .doula-services {
   display: flex;
   flex-direction: column;
-  height: 95vh;
+  height: 100%;
   width: 100%;
 }
 .page > .content .doula-services .menu-doula-services-container {
@@ -199,7 +198,8 @@ a {
   }
 }
 .page > .content .doula-services .services-content {
-  padding: 1em;
+  padding: 1em 1em 0;
+  overflow-y: scroll;
 }
 .page > .content .doula-services .services-content .bubbles {
   display: flex;
@@ -254,20 +254,35 @@ a {
 }
 .page > .content .doula-services .services-content .left h2, .page > .content .doula-services .services-content .right h2 {
   background-image: url("static/white-icon.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0.25em;
+  margin-top: 1em;
+  width: 100%;
+}
+.page > .content .doula-services .services-content .left a, .page > .content .doula-services .services-content .right a {
+  color: #222222;
+  text-align: center;
+  background-image: url("static/pink-icon.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 1em;
-  margin-top: 1em;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5em 0;
 }
 @media screen and (min-width: 769px) {
   .page > .content .doula-services {
     flex-direction: row;
+    overflow: hidden;
   }
   .page > .content .doula-services .menu-doula-services-container {
     flex: 1;
     background-color: transparent;
-    height: 95vh;
+    height: 90vh;
   }
   .page > .content .doula-services .menu-doula-services-container ul {
     display: flex;
@@ -292,9 +307,13 @@ a {
   .page > .content .doula-services .menu-doula-services-container ul li a {
     display: unset;
   }
+  .page > .content .doula-services .menu-doula-services-container ul li a:hover {
+    text-decoration: underline;
+  }
   .page > .content .doula-services .services-content {
     flex: 3;
-    padding: 1em;
+    padding: 1em 1em 0;
+    height: 90vmin;
     overflow-y: scroll;
   }
   .page > .content .doula-services .services-content h2 {
@@ -311,6 +330,25 @@ a {
   .page > .content .doula-services .services-content .bubbles .doula-bubble {
     height: 30vmax;
     width: 30vmax;
+  }
+  .page > .content .doula-services .services-content .left, .page > .content .doula-services .services-content .right {
+    display: flex;
+    margin: 1.5em 0;
+  }
+  .page > .content .doula-services .services-content .left h2, .page > .content .doula-services .services-content .right h2 {
+    margin: unset;
+    padding: 2.5em;
+    background-size: contain;
+  }
+  .page > .content .doula-services .services-content .left a, .page > .content .doula-services .services-content .right a {
+    padding: 1.5em 1em;
+    height: 50px;
+  }
+  .page > .content .doula-services .services-content .right {
+    flex-direction: row;
+  }
+  .page > .content .doula-services .services-content .left {
+    flex-direction: row-reverse;
   }
 }
 

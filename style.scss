@@ -25,6 +25,11 @@ body {
 
 a {
   color: $PURPLE;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .page {
@@ -135,10 +140,6 @@ a {
     align-items: center;
     margin-top: 5vmax;
 
-    @media screen and (min-width: $MEDIUM) {
-      height: 95vmin;
-    }
-
     .home {
       height: auto;
       width: 100vmin;
@@ -192,20 +193,8 @@ a {
     .doula-services {
       display: flex;
       flex-direction: column;
-      height: 95vh;
+      height: 100%;
       width: 100%;
-
-      //.page-title {
-      //  text-align: center;
-      //}
-      //
-      //.page-content {
-      //  padding: 1em;
-      //
-      //  ul {
-      //    padding-left: 1em;
-      //  }
-      //}
 
       .menu-doula-services-container {
         background-color: $TAN;
@@ -250,19 +239,20 @@ a {
       }
 
       .services-content {
-        padding: 1em;
+        padding: 1em 1em 0;
+        overflow-y: scroll;
 
         .bubbles {
           display: flex;
           flex-direction: column;
           align-items: center;
 
-            blockquote {
-              margin: 0 1em 0.5em;
-              padding: 0 0.5em;
-              border-left: solid 3px $PURPLE;
-              border-radius: 4px;
-            }
+          blockquote {
+            margin: 0 1em 0.5em;
+            padding: 0 0.5em;
+            border-left: solid 3px $PURPLE;
+            border-radius: 4px;
+          }
 
           .doula-bubble {
             text-align: center;
@@ -316,23 +306,41 @@ a {
 
           h2 {
             background-image: url("static/white-icon.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 0.25em;
+            margin-top: 1em;
+            width: 100%;
+          }
+
+          a {
+            color: $DARK_GRAY;
+            text-align: center;
+            background-image: url("static/pink-icon.png");
             background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
-            padding: 1em;
-            margin-top: 1em;
+            height: 2em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5em 0;
+
+            p {
+            }
           }
         }
       }
 
-
       @media screen and (min-width: $MEDIUM) {
         flex-direction: row;
+        overflow: hidden;
 
         .menu-doula-services-container {
           flex: 1;
           background-color: transparent;
-          height: 95vh;
+          height: 90vh;
 
           ul {
             display: flex;
@@ -357,6 +365,10 @@ a {
 
               a {
                 display: unset;
+
+                &:hover {
+                text-decoration: underline;
+              }
               }
             }
           }
@@ -366,20 +378,9 @@ a {
 
         .services-content {
           flex: 3;
-          padding: 1em;
+          padding: 1em 1em 0;
+          height: 90vmin;
           overflow-y: scroll;
-
-          //&.pricing {
-          //  display: flex;
-          //  flex-direction: column;
-          //  align-items: center;
-          //  justify-content: center;
-          //
-          //  h2 {
-          //    text-align: center;
-          //    margin-top: 1em;
-          //  }
-          //}
 
           h2 {
             text-align: center;
@@ -398,6 +399,30 @@ a {
               height: 30vmax;
               width: 30vmax;
             }
+          }
+
+          .left, .right {
+            display: flex;
+            margin: 1.5em 0;
+
+            h2 {
+              margin: unset;
+              padding: 2.5em;
+              background-size: contain;
+            }
+
+            a {
+              padding: 1.5em 1em;
+              height: 50px;
+            }
+          }
+
+          .right {
+            flex-direction: row;
+          }
+
+          .left {
+            flex-direction: row-reverse;
           }
         }
       }
