@@ -278,6 +278,13 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
+.page > .content .doula-services .services-content.pricing {
+  display: flex;
+  flex-direction: column;
+}
+.page > .content .doula-services .services-content.pricing ul {
+  list-style-position: inside;
+}
 @media screen and (min-width: 769px) {
   .page > .content .doula-services {
     flex-direction: row;
@@ -394,6 +401,13 @@ a:hover {
   }
   .page > .content .doula-services .services-content.meet-your-doula > div > div figure img {
     max-height: 70vmin;
+  }
+}
+@media screen and (min-width: 769px) {
+  .page > .content .doula-services .services-content.pricing {
+    height: 100%;
+    text-align: center;
+    justify-content: center;
   }
 }
 

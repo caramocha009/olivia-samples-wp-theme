@@ -336,6 +336,15 @@ a {
           display: flex;
           flex-direction: column;
         }
+
+        &.pricing {
+          display: flex;
+          flex-direction: column;
+
+          ul {
+            list-style-position: inside;
+          }
+        }
       }
 
       @media screen and (min-width: $MEDIUM) {
@@ -471,6 +480,12 @@ a {
                 }
               }
             }
+          }
+
+          &.pricing {
+            height: 100%;
+            text-align: center;
+            justify-content: center;
           }
         }
       }
