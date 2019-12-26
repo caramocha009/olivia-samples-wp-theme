@@ -193,6 +193,34 @@ body {
     display: unset;
   }
 }
+.page > .content .doula-services .services-content .bubbles {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page > .content .doula-services .services-content .bubbles .doula-bubble {
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 1em;
+  display: flex;
+  height: 85vmin;
+  width: 85vmin;
+  justify-content: center;
+  align-items: center;
+}
+.page > .content .doula-services .services-content .bubbles .doula-bubble .bubble-a {
+  display: none;
+}
+.page > .content .doula-services .services-content .bubbles .doula-bubble .bubble-q {
+  display: flex;
+}
+.page > .content .doula-services .services-content .bubbles .doula-bubble.show .bubble-a {
+  display: flex;
+}
+.page > .content .doula-services .services-content .bubbles .doula-bubble.show .bubble-q {
+  display: none;
+}
 @media screen and (min-width: 769px) {
   .page > .content .doula-services {
     flex-direction: row;
@@ -232,6 +260,15 @@ body {
   }
   .page > .content .doula-services .services-content h2 {
     text-align: center;
+  }
+  .page > .content .doula-services .services-content .bubbles {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .page > .content .doula-services .services-content .bubbles .doula-bubble {
+    height: 30vmax;
+    width: 30vmax;
   }
 }
 

@@ -245,6 +245,44 @@ body {
         }
       }
 
+      .services-content {
+        .bubbles {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          .doula-bubble {
+            text-align: center;
+            background-color: $WHITE;
+            border-radius: 50%;
+            padding: 1em;
+            display: flex;
+            height: 85vmin;
+            width: 85vmin;
+            justify-content: center;
+            align-items: center;
+
+            .bubble-a {
+              display: none;
+            }
+
+            .bubble-q {
+              display: flex;
+            }
+
+            &.show {
+              .bubble-a {
+                display: flex;
+              }
+
+              .bubble-q {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
 
       @media screen and (min-width: $MEDIUM) {
         flex-direction: row;
@@ -303,6 +341,17 @@ body {
 
           h2 {
             text-align: center;
+          }
+
+          .bubbles {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+
+            .doula-bubble {
+              height: 30vmax;
+              width: 30vmax;
+            }
           }
         }
       }
