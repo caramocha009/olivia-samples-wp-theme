@@ -13,6 +13,10 @@ body {
   }
 }
 
+a {
+  color: #7d6b81;
+}
+
 .page {
   background-color: #f2dbd8;
   font-family: "Spectral", sans-serif;
@@ -197,6 +201,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.page > .content .doula-services .services-content .bubbles blockquote {
+  margin: 0 1em 0.5em;
+  padding: 0 1em;
+  border-left: solid 3px #7d6b81;
+  border-radius: 4px;
 }
 .page > .content .doula-services .services-content .bubbles .doula-bubble {
   text-align: center;

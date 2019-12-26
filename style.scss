@@ -23,6 +23,10 @@ body {
   }
 }
 
+a {
+  color: $PURPLE;
+}
+
 .page {
   background-color: $LIGHT_PINK;
   font-family: "Spectral", sans-serif;
@@ -250,6 +254,13 @@ body {
           display: flex;
           flex-direction: column;
           align-items: center;
+
+            blockquote {
+              margin: 0 1em 0.5em;
+              padding: 0 1em;
+              border-left: solid 3px $PURPLE;
+              border-radius: 4px;
+            }
 
           .doula-bubble {
             text-align: center;
