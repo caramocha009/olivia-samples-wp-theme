@@ -1,5 +1,4 @@
-<div class="
-    <?php
+<div class="<?php
         $sanitizedTitle = sanitize_title(get_the_title());
 
         $alignment = array(
@@ -10,15 +9,10 @@
         );
 
         echo $alignment[$sanitizedTitle];
-    ?>
-">
-    <h2 class="name">
-        <?php the_title(); ?>
-    </h2>
+    ?>">
+    <h2 class="name"><?php the_title(); ?></h2>
 
-    <div class="description">
-        <?php the_content(); ?>
-    </div>
+    <div class="description"><?php the_content(); ?></div>
 
     <?php
 

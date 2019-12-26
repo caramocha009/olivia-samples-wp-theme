@@ -156,7 +156,6 @@ a {
       background-attachment: scroll;
       background-position: 2% center;
       background-repeat: no-repeat;
-      //max-height: 100%;
 
       .page-title {
         text-align: center;
@@ -194,6 +193,7 @@ a {
       display: flex;
       flex-direction: column;
       height: 95vh;
+      width: 100%;
 
       //.page-title {
       //  text-align: center;
@@ -250,6 +250,8 @@ a {
       }
 
       .services-content {
+        padding: 1em;
+
         .bubbles {
           display: flex;
           flex-direction: column;
@@ -257,7 +259,7 @@ a {
 
             blockquote {
               margin: 0 1em 0.5em;
-              padding: 0 1em;
+              padding: 0 0.5em;
               border-left: solid 3px $PURPLE;
               border-radius: 4px;
             }
@@ -267,6 +269,7 @@ a {
             background-color: $WHITE;
             border-radius: 50%;
             padding: 1em;
+            margin: 0.5em;
             display: flex;
             height: 85vmin;
             width: 85vmin;
@@ -284,12 +287,40 @@ a {
             &.show {
               .bubble-a {
                 display: flex;
+                flex-direction: column;
+                overflow-y: scroll;
+                margin: 1em 0.5em;
+                font-size: 0.85em;
+
+                ul {
+                  list-style-type: none;
+                }
               }
 
               .bubble-q {
                 display: none;
               }
             }
+          }
+        }
+
+        h2 {
+          text-align: center;
+        }
+
+        .left, .right {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          h2 {
+            background-image: url("static/white-icon.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            padding: 1em;
+            margin-top: 1em;
           }
         }
       }
@@ -358,6 +389,10 @@ a {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-around;
+
+            blockquote {
+              padding: 0 1em;
+            }
 
             .doula-bubble {
               height: 30vmax;

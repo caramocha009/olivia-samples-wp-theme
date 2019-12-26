@@ -1,5 +1,4 @@
-<div class="
-    <?php
+<div class="<?php
     //clean names of all "What's a Doula?" category posts
     $bubbles = array(
         'how-can-a-doula-impact-a-birth' => "doula-bubble doulas-impact",
@@ -12,13 +11,8 @@
     $sanitizedTitle = sanitize_title($currentTitle);
 
     echo $bubbles[$sanitizedTitle];
-    ?>
-">
-    <h2 class="bubble-q">
-        <?php the_title(); ?>
-    </h2>
+    ?>">
+    <h2 class="bubble-q"><?php the_title(); ?></h2>
 
-    <div class="bubble-a">
-        <?php the_content(); ?>
-    </div>
+    <div class="bubble-a"><?php the_content(); ?></div>
 </div>
