@@ -3,7 +3,7 @@
 
     <?php wp_nav_menu('&container_class=collapsed menu-doula-services-container &menu=doula-services'); ?>
 
-    <div class="services-content">
+    <div class="services-content meet-your-doula">
 
 <?php
 if ( have_posts() ) : while ( have_posts() ) : the_post();
