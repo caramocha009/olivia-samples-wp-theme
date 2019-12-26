@@ -7,7 +7,6 @@ function hideNav(selector) {
 }
 
 jQuery(document).ready(function () {
-    console.log('here');
     (function ($) {
         const topNav = $(".top-nav");
         const pageContent = $(".content");
