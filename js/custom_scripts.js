@@ -4,6 +4,31 @@ const bubbleMap = {
     "doulas-do": ".doula-bubble.doulas-do",
 };
 
+const serviceMap = {
+    "prepare-for-postpartum-care": ".prepare-for-postpartum-care",
+    "breastfeeding-support": ".breastfeeding-support",
+    "back-up-doula": ".back-up-doula",
+    "holding-space": ".holding-space",
+    "advocacy": ".advocacy",
+    "informed-choices": ".informed-choices",
+    "affirmation": ".affirmation",
+    "doula-tools": ".doula-tools",
+    "family-and-partner-support": ".family-and-partner-support",
+    "labor-positions": ".labor-positions",
+    "comfort-measures": ".comfort-measures",
+    "continuous-support": ".continuous-support",
+    "empowerment": ".empowerment",
+    "planning-for-self-care": ".planning-for-self-care",
+    "back-to-work-planning": ".back-to-work-planning",
+    "partner-support": ".partner-support",
+    "yoga-postures": ".yoga-postures",
+    "nutritional-support": ".nutritional-support",
+    "goal-setting": ".goal-setting",
+    "community-referrals": ".community-referrals",
+    "provider-support": ".provider-support",
+    "financial-planning-support": ".financial-planning-support",
+};
+
 function toggleNav(selector) {
     jQuery(selector).toggleClass("collapsed");
 }
@@ -22,12 +47,8 @@ jQuery(document).ready(function () {
     (function ($) {
         const topNav = $(".top-nav");
         const pageContent = $(".content");
-
         const doulaNav = $(".menu-doula-services-container");
         const doulaContent = $(".services-content");
-        const doulaImpact = $(bubbleMap["doulas-impact"]);
-        const doulaDont = $(bubbleMap["doulas-dont"]);
-        const doulaDo = $(bubbleMap["doulas-do"]);
 
         topNav.click(function () {
             toggleNav(".top-nav");
@@ -45,16 +66,22 @@ jQuery(document).ready(function () {
             toggleNav(".menu-doula-services-container");
         });
 
-        doulaImpact.click(function () {
-            toggleContent(`${bubbleMap["doulas-impact"]}`);
+        const bubbles = Object.keys(bubbleMap);
+        bubbles.forEach(function(bubble) {
+            const bubbleSelector = $(bubbleMap[bubble]);
+
+            bubbleSelector.click(function () {
+                toggleContent(`${bubbleMap[bubble]}`);
+            })
         });
 
-        doulaDont.click(function () {
-            toggleContent(`${bubbleMap["doulas-dont"]}`);
-        });
+        const services = Object.keys(serviceMap);
+        services.forEach(function(service) {
+            const serviceSelector = $(serviceMap[service]);
 
-        doulaDo.click(function () {
-            toggleContent(`${bubbleMap["doulas-do"]}`);
+            serviceSelector.click(function () {
+                toggleContent(`${serviceMap[service]}`);
+            })
         });
 
     })(jQuery);

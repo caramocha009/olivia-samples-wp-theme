@@ -54,10 +54,10 @@ a:hover {
   overflow: hidden;
   text-align: center;
 }
-.page .top-nav.collapsed ul li.current_page_item, .page .top-nav.collapsed ul li.current_page_parent {
+.page .top-nav.collapsed ul li.current_page_item, .page .top-nav.collapsed ul li.current_page_parent, .page .top-nav.collapsed ul li.current_page_ancestor {
   display: flex;
 }
-.page .top-nav.collapsed ul li.current_page_item a, .page .top-nav.collapsed ul li.current_page_parent a {
+.page .top-nav.collapsed ul li.current_page_item a, .page .top-nav.collapsed ul li.current_page_parent a, .page .top-nav.collapsed ul li.current_page_ancestor a {
   max-height: unset;
 }
 @media screen and (min-width: 769px) {
@@ -285,6 +285,40 @@ a:hover {
 .page > .content .doula-services .services-content.pricing ul {
   list-style-position: inside;
 }
+.page > .content .doula-services.explore {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.page > .content .doula-services.explore .service {
+  margin: 0.6em;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 95vmin;
+  width: 95vmin;
+  border-radius: 50%;
+  background-color: #dbb9bb;
+  padding: 1em;
+}
+.page > .content .doula-services.explore .service .title {
+  display: flex;
+}
+.page > .content .doula-services.explore .service .content {
+  display: none;
+}
+.page > .content .doula-services.explore .service.show .title {
+  display: none;
+}
+.page > .content .doula-services.explore .service.show .content {
+  font-size: 0.9em;
+  padding: 2em 1em;
+  display: flex;
+  overflow-y: scroll;
+}
 @media screen and (min-width: 769px) {
   .page > .content .doula-services {
     flex-direction: row;
@@ -408,6 +442,16 @@ a:hover {
     height: 100%;
     text-align: center;
     justify-content: center;
+  }
+}
+@media screen and (min-width: 769px) {
+  .page > .content .doula-services.explore {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .page > .content .doula-services.explore .service {
+    height: 40vmin;
+    width: 40vmin;
   }
 }
 
