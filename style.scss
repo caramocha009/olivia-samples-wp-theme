@@ -113,6 +113,14 @@ a {
         align-items: center;
         padding: 0.1em 0;
 
+        &.current_page_item, &current_page_parent, &.current_page_ancestor {
+          a::after, a::before {
+            content: "\2022";
+            color: $LIGHT_PINK;
+            padding: 0 0.5em;
+          }
+        }
+
         a {
           display: inline-flex;
           height: auto;
@@ -120,12 +128,10 @@ a {
           color: $DARK_GRAY;
           text-decoration: none;
           text-align: center;
-        }
 
-        &.current_page_item, &current_page_parent, &.current_page_ancestor {
-          a::after, a::before {
+          &:hover::after, &:hover::before {
             content: "\2022";
-            color: $LIGHT_PINK;
+            color: $PURPLE;
             padding: 0 0.5em;
           }
         }
@@ -211,6 +217,14 @@ a {
               color: $DARK_GRAY;
               text-decoration: none;
             }
+
+            &.current-menu-item {
+              a::after, a::before {
+                content: "\2022";
+                color: $PURPLE;
+                padding: 0 0.5em;
+              }
+            }
           }
         }
 
@@ -226,7 +240,8 @@ a {
                 }
 
                 &.current-menu-item {
-                  display: unset;
+                  display: block;
+                  text-align: center;
 
                   a {
                     display: unset;
@@ -306,7 +321,6 @@ a {
 
           h2 {
             background-image: url("static/white-icon.png");
-            background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
             padding: 0.25em;
@@ -355,19 +369,19 @@ a {
         background-color: rgba(0, 0, 0, 0.7);
 
         .service {
-          margin: 0.6em;
           display: flex;
-          text-align: center;
           justify-content: center;
           align-items: center;
           height: 95vmin;
           width: 95vmin;
           border-radius: 50%;
+          margin: 0.5em;
+          padding: 2em;
           background-color: $PINK;
-          padding: 1em;
 
           .title {
             display: flex;
+            text-align: center;
           }
 
           .content {
@@ -381,9 +395,18 @@ a {
 
             .content {
               font-size: 0.9em;
-              padding: 2em 1em;
+              object-fit: contain;
+              text-align: center;
+              justify-content: center;
+              align-items: center;
+              height: 95vmin;
+              width: 95vmin;
               display: flex;
               overflow-y: scroll;
+
+              p {
+                padding: 0.5em;
+              }
             }
           }
 
@@ -420,19 +443,25 @@ a {
 
               &.current_page_item {
                 background-image: url("static/pink-icon.png");
+
+                a::after, a::before {
+                  content: none;
+                }
               }
 
               a {
                 display: unset;
 
-                &:hover {
-                  text-decoration: underline;
+                &:hover::after, &:hover::before {
+                  transition: opacity 0.1s;
+                  opacity: 100%;
+                  content: "\2022";
+                  color: $PURPLE;
+                  padding: 0 0.5em;
                 }
               }
             }
           }
-
-
         }
 
         .services-content {
@@ -537,6 +566,7 @@ a {
         &.explore {
           flex-direction: row;
           flex-wrap: wrap;
+
           .service {
             height: 40vmin;
             width: 40vmin;
@@ -545,4 +575,5 @@ a {
       }
     }
   }
+
 }

@@ -97,6 +97,11 @@ a:hover {
   align-items: center;
   padding: 0.1em 0;
 }
+.page .top-nav > ul li.current_page_item a::after, .page .top-nav > ul li.current_page_item a::before, .page .top-nav > ul licurrent_page_parent a::after, .page .top-nav > ul licurrent_page_parent a::before, .page .top-nav > ul li.current_page_ancestor a::after, .page .top-nav > ul li.current_page_ancestor a::before {
+  content: "•";
+  color: #f2dbd8;
+  padding: 0 0.5em;
+}
 .page .top-nav > ul li a {
   display: inline-flex;
   height: auto;
@@ -105,9 +110,9 @@ a:hover {
   text-decoration: none;
   text-align: center;
 }
-.page .top-nav > ul li.current_page_item a::after, .page .top-nav > ul li.current_page_item a::before, .page .top-nav > ul licurrent_page_parent a::after, .page .top-nav > ul licurrent_page_parent a::before, .page .top-nav > ul li.current_page_ancestor a::after, .page .top-nav > ul li.current_page_ancestor a::before {
+.page .top-nav > ul li a:hover::after, .page .top-nav > ul li a:hover::before {
   content: "•";
-  color: #f2dbd8;
+  color: #7d6b81;
   padding: 0 0.5em;
 }
 .page > .content {
@@ -183,6 +188,11 @@ a:hover {
   color: #222222;
   text-decoration: none;
 }
+.page > .content .doula-services .menu-doula-services-container ul li.current-menu-item a::after, .page > .content .doula-services .menu-doula-services-container ul li.current-menu-item a::before {
+  content: "•";
+  color: #7d6b81;
+  padding: 0 0.5em;
+}
 @media screen and (max-width: 769px) {
   .page > .content .doula-services .menu-doula-services-container.collapsed ul li {
     display: none;
@@ -191,7 +201,8 @@ a:hover {
     display: none;
   }
   .page > .content .doula-services .menu-doula-services-container.collapsed ul li.current-menu-item {
-    display: unset;
+    display: block;
+    text-align: center;
   }
   .page > .content .doula-services .menu-doula-services-container.collapsed ul li.current-menu-item a {
     display: unset;
@@ -254,7 +265,6 @@ a:hover {
 }
 .page > .content .doula-services .services-content .left h2, .page > .content .doula-services .services-content .right h2 {
   background-image: url("static/white-icon.png");
-  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   padding: 0.25em;
@@ -293,19 +303,19 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
 .page > .content .doula-services.explore .service {
-  margin: 0.6em;
   display: flex;
-  text-align: center;
   justify-content: center;
   align-items: center;
   height: 95vmin;
   width: 95vmin;
   border-radius: 50%;
+  margin: 0.5em;
+  padding: 2em;
   background-color: #dbb9bb;
-  padding: 1em;
 }
 .page > .content .doula-services.explore .service .title {
   display: flex;
+  text-align: center;
 }
 .page > .content .doula-services.explore .service .content {
   display: none;
@@ -315,9 +325,17 @@ a:hover {
 }
 .page > .content .doula-services.explore .service.show .content {
   font-size: 0.9em;
-  padding: 2em 1em;
+  object-fit: contain;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 95vmin;
+  width: 95vmin;
   display: flex;
   overflow-y: scroll;
+}
+.page > .content .doula-services.explore .service.show .content p {
+  padding: 0.5em;
 }
 @media screen and (min-width: 769px) {
   .page > .content .doula-services {
@@ -349,11 +367,18 @@ a:hover {
   .page > .content .doula-services .menu-doula-services-container ul li.current_page_item {
     background-image: url("static/pink-icon.png");
   }
+  .page > .content .doula-services .menu-doula-services-container ul li.current_page_item a::after, .page > .content .doula-services .menu-doula-services-container ul li.current_page_item a::before {
+    content: none;
+  }
   .page > .content .doula-services .menu-doula-services-container ul li a {
     display: unset;
   }
-  .page > .content .doula-services .menu-doula-services-container ul li a:hover {
-    text-decoration: underline;
+  .page > .content .doula-services .menu-doula-services-container ul li a:hover::after, .page > .content .doula-services .menu-doula-services-container ul li a:hover::before {
+    transition: opacity 0.1s;
+    opacity: 100%;
+    content: "•";
+    color: #7d6b81;
+    padding: 0 0.5em;
   }
   .page > .content .doula-services .services-content {
     flex: 3;
