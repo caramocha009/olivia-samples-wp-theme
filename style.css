@@ -96,6 +96,8 @@ a:hover {
   content: "•";
   color: #f2dbd8;
   padding: 0 0.5em;
+  opacity: 1;
+  transition: color 0.1s;
 }
 .page .top-nav > ul li a {
   display: inline-flex;
@@ -105,10 +107,17 @@ a:hover {
   text-decoration: none;
   text-align: center;
 }
-.page .top-nav > ul li a:hover::after, .page .top-nav > ul li a:hover::before {
+.page .top-nav > ul li a::after, .page .top-nav > ul li a::before {
   content: "•";
   color: #7d6b81;
   padding: 0 0.5em;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+.page .top-nav > ul li a:hover::after, .page .top-nav > ul li a:hover::before {
+  color: #7d6b81;
+  opacity: 1;
+  transition: opacity 0.1s, color 0.1s;
 }
 .page > .content {
   flex: 1;
@@ -191,6 +200,12 @@ a:hover {
   color: #222222;
   text-decoration: none;
 }
+.page > .content .doula-services .menu-doula-services-container ul li.current-menu-item a::before {
+  content: "→";
+}
+.page > .content .doula-services .menu-doula-services-container ul li.current-menu-item a::after {
+  content: "←";
+}
 .page > .content .doula-services .menu-doula-services-container ul li.current-menu-item a::after, .page > .content .doula-services .menu-doula-services-container ul li.current-menu-item a::before {
   content: "•";
   color: #7d6b81;
@@ -206,6 +221,11 @@ a:hover {
   .page > .content .doula-services .menu-doula-services-container.collapsed ul li.current-menu-item {
     display: block;
     text-align: center;
+  }
+  .page > .content .doula-services .menu-doula-services-container.collapsed ul li.current-menu-item a::after, .page > .content .doula-services .menu-doula-services-container.collapsed ul li.current-menu-item a::before {
+    content: "↓";
+    color: #7d6b81;
+    padding: 0 0.5em;
   }
   .page > .content .doula-services .menu-doula-services-container.collapsed ul li.current-menu-item a {
     display: unset;
@@ -405,19 +425,20 @@ a:hover {
   .page > .content .doula-services .menu-doula-services-container ul li.current_page_item {
     background-image: url("static/pink-icon.png");
   }
-  .page > .content .doula-services .menu-doula-services-container ul li.current_page_item a::after, .page > .content .doula-services .menu-doula-services-container ul li.current_page_item a::before {
-    content: none;
-  }
   .page > .content .doula-services .menu-doula-services-container ul li a {
     display: unset;
     padding: 1em 0;
   }
-  .page > .content .doula-services .menu-doula-services-container ul li a:hover::after, .page > .content .doula-services .menu-doula-services-container ul li a:hover::before {
-    transition: opacity 0.1s;
-    opacity: 100%;
+  .page > .content .doula-services .menu-doula-services-container ul li a::after, .page > .content .doula-services .menu-doula-services-container ul li a::before {
     content: "•";
     color: #7d6b81;
     padding: 0 0.5em;
+    opacity: 0;
+    transition: opacity 0.1s;
+  }
+  .page > .content .doula-services .menu-doula-services-container ul li a:hover::after, .page > .content .doula-services .menu-doula-services-container ul li a:hover::before {
+    transition: opacity 0.1s;
+    opacity: 1;
   }
   .page > .content .doula-services .services-content {
     flex: 3;
