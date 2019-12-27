@@ -1,6 +1,7 @@
 <?php get_header(); ?>
 
 <div class="doula-services explore">
+    <a class="close" href="<?php echo get_page_link(get_page_by_title('Available Services')->ID); ?>"> </a>
     <?php
     $args = array(
         'post_type' => 'post',

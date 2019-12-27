@@ -41,11 +41,7 @@ a:hover {
   display: flex;
   flex: 1;
   box-shadow: 0 0 0 #f2dbd8;
-}
-@media screen and (min-width: 769px) {
-  .page .top-nav {
-    height: 5vmax;
-  }
+  height: 5vmax;
 }
 .page .top-nav.collapsed ul li {
   display: none;
@@ -309,6 +305,41 @@ a:hover {
   justify-content: space-evenly;
   align-items: center;
   background-color: rgba(0, 0, 0, 0.7);
+}
+.page > .content .doula-services.explore .close {
+  height: 30px;
+  width: 30px;
+  position: fixed;
+  top: 12vmin;
+  right: 1vmin;
+}
+.page > .content .doula-services.explore .close:hover::before, .page > .content .doula-services.explore .close:hover::after {
+  background: #7d6b81;
+  transition: background 0.1s;
+}
+.page > .content .doula-services.explore .close::before, .page > .content .doula-services.explore .close::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  background: #f2dbd8;
+  height: 5px;
+  margin-top: -4px;
+  border-radius: 5px;
+  transition: background 0.1s;
+}
+.page > .content .doula-services.explore .close::before {
+  transform: rotate(45deg);
+}
+.page > .content .doula-services.explore .close::after {
+  transform: rotate(-45deg);
+}
+@media screen and (min-width: 769px) {
+  .page > .content .doula-services.explore .close {
+    top: 10vmin;
+    right: 1.5em;
+  }
 }
 .page > .content .doula-services.explore .service {
   display: flex;
