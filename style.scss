@@ -52,23 +52,23 @@ a {
     display: flex;
     flex: 1;
     box-shadow: 0 0 0 $LIGHT_PINK;
-    height: 5vmax;
+    min-height: 5vmax;
+
+    @media screen and (min-width: $MEDIUM) {
+      height: 5vmax;
+    }
 
     &.collapsed {
       ul {
         li {
           display: none;
 
-          a {
-            overflow: hidden;
-            text-align: center;
-          }
-
           &.current_page_item, &.current_page_parent, &.current_page_ancestor {
             display: flex;
+            height: auto;
 
             a {
-              max-height: unset;
+              height: auto;
             }
           }
 
@@ -78,9 +78,9 @@ a {
             justify-content: center;
             align-items: center;
 
-            a {
-              overflow: unset;
-            }
+            //a {
+            //  overflow: unset;
+            //}
           }
         }
       }
