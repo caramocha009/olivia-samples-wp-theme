@@ -27,6 +27,9 @@ const serviceMap = {
     "community-referrals": ".community-referrals",
     "provider-support": ".provider-support",
     "financial-planning-support": ".financial-planning-support",
+    "emotional-support": ".emotional-support",
+    "education-and-resources": ".education-and-resources",
+    "birth-planning": ".birth-planning"
 };
 
 function toggleNav(selector) {
