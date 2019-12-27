@@ -38,8 +38,6 @@ function hideNav(selector) {
 }
 
 function toggleContent(selector) {
-    console.log('showing!');
-    console.log(selector);
     jQuery(selector).toggleClass("show");
 }
 

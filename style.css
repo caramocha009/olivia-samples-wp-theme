@@ -367,16 +367,21 @@ a:hover {
   height: 95vmin;
   width: 95vmin;
   border-radius: 50%;
-  margin: 0.5em;
-  padding: 2em;
+  margin: 0.25em;
   background-color: #dbb9bb;
+  transition: padding 0.2s;
 }
 .page > .content .doula-services.explore .service .title {
   display: flex;
   text-align: center;
+  padding: 1em;
 }
 .page > .content .doula-services.explore .service .content {
   display: none;
+}
+.page > .content .doula-services.explore .service.show {
+  padding: 2em;
+  transition: padding 0.2s;
 }
 .page > .content .doula-services.explore .service.show .title {
   display: none;
@@ -537,6 +542,7 @@ a:hover {
   .page > .content .doula-services.explore .service {
     height: 40vmin;
     width: 40vmin;
+    margin: 2em;
   }
 }
 

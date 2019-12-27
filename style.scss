@@ -439,13 +439,14 @@ a {
           height: 95vmin;
           width: 95vmin;
           border-radius: 50%;
-          margin: 0.5em;
-          padding: 2em;
+          margin: 0.25em;
           background-color: $PINK;
+          transition: padding 0.2s;
 
           .title {
             display: flex;
             text-align: center;
+            padding: 1em;
           }
 
           .content {
@@ -453,6 +454,9 @@ a {
           }
 
           &.show {
+            padding: 2em;
+            transition: padding 0.2s;
+
             .title {
               display: none;
             }
@@ -636,6 +640,7 @@ a {
           .service {
             height: 40vmin;
             width: 40vmin;
+            margin: 2em;
           }
         }
       }
