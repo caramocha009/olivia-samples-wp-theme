@@ -146,24 +146,32 @@ a:hover {
 .page > .content .about .page-content {
   width: 90%;
   margin: 0 auto;
-  height: 100%;
+  padding: 0.5em 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .page > .content .about .page-content ul {
   padding-left: 1em;
+}
+.page > .content .about .page-content a {
+  margin-top: 0.5em;
+  color: #222222;
+  background-image: url("static/pink-icon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (min-width: 769px) {
   .page > .content .about {
     flex-direction: row;
     height: 100%;
   }
-}
-@media screen and (min-width: 769px) {
-  .page > .content .about > span {
-    flex: 1;
-  }
-}
-@media screen and (min-width: 769px) {
-  .page > .content .about > div {
+  .page > .content .about > span, .page > .content .about > div {
     flex: 1;
   }
 }
@@ -372,6 +380,7 @@ a:hover {
   }
   .page > .content .doula-services .menu-doula-services-container ul li a {
     display: unset;
+    padding: 1em 0;
   }
   .page > .content .doula-services .menu-doula-services-container ul li a:hover::after, .page > .content .doula-services .menu-doula-services-container ul li a:hover::before {
     transition: opacity 0.1s;

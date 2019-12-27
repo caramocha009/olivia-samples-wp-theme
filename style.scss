@@ -171,26 +171,34 @@ a {
       .page-content {
         width: 90%;
         margin: 0 auto;
-        height: 100%;
+        padding: 0.5em 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
 
         ul {
           padding-left: 1em;
+        }
+
+        a {
+          margin-top: 0.5em;
+          color: $DARK_GRAY;
+          background-image: url("static/pink-icon.png");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          height: 4em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
       }
 
       @media screen and (min-width: $MEDIUM) {
         flex-direction: row;
         height: 100%;
-      }
 
-      > span {
-        @media screen and (min-width: $MEDIUM) {
-          flex: 1;
-        }
-      }
-
-      > div {
-        @media screen and (min-width: $MEDIUM) {
+        > span, > div {
           flex: 1;
         }
       }
@@ -451,6 +459,7 @@ a {
 
               a {
                 display: unset;
+                padding: 1em 0;
 
                 &:hover::after, &:hover::before {
                   transition: opacity 0.1s;
