@@ -24,6 +24,6 @@
 <body>
 <div class="page">
 
-    <?php wp_page_menu('&menu_class=collapsed top-nav&container=nav&show_home=1&depth=1'); ?>
-
+    <?php wp_nav_menu('&container_class=collapsed top-nav&container=nav&show_home=1&depth=1&menu=header-menu'); ?>
+<!--    --><?php //wp_nav_menu('&container_class=collapsed menu-doula-services-container &menu=doula-services'); ?>
     <div class="content">
